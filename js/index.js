@@ -104,6 +104,10 @@ inputs.forEach(inp => {
         let val = inp.value
 
         userData[key] = val
+
+      if(typeof inp !== "text") {
+        alert("what are you dumb ?")  
+    }
     }
 })
 
@@ -166,8 +170,18 @@ document.addEventListener('DOMContentLoaded', function() {
     timerId = setInterval(countdownTimer, 1000);
   });
 
-
- 
-
+  
 
 
+window.addEventListener("scroll" , () => {
+    let scrollable = document.documentElement.scrollHeight - window.innerHeight 
+    let scrolled = window.scrollY
+
+     if(scrolled >= scrollable) {
+       modal.style.display = "flex" 
+    } else {
+        modal.style.display = "none" 
+    }
+
+  
+})
